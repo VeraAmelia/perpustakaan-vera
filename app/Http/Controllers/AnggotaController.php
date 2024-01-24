@@ -9,7 +9,7 @@ class AnggotaController extends Controller
 {
     public function index()
     {
-        $anggotas = anggota::latest()->get();
+        $anggotas = Anggota::latest()->get();
         return view('anggota.index', compact('anggotas'));
     }
 
@@ -25,12 +25,12 @@ class AnggotaController extends Controller
             'kode_anggota' => 'required|string|max:20',
             'nama' => 'required',
             'jenis_kelamin' => 'required',
-            'tagl_lahir' => 'required',
+            'tgl_lahir' => 'required',
             'telepon' => 'required',
             'alamat' => 'required',
         ]);
 
-        $anggotas = anggota::create([
+        $anggotas = Anggota::create([
             'kode_anggota' => $request->kode_anggota,
             'nama' => $request->nama,
             'jenis_kelamin' => $request->jenis_kelamin,
@@ -62,8 +62,7 @@ class AnggotaController extends Controller
 
     public function edit($id)
     {
-        $anggotas = Anggota::all();
-        $anggotas = anggota::findOrFail($id);
+        $anggotas = Anggota::findOrFail($id);
         return view('anggota.edit', compact('anggotas'));
     }
 
@@ -78,7 +77,7 @@ class AnggotaController extends Controller
             'alamat' => 'required',
         ]);
 
-        $anggotas = anggota::findOrFail($id);
+        $anggotas = Anggota::findOrFail($id);
 
         $anggotas->update([
             'kode_anggota' => $request->nim,
@@ -107,7 +106,7 @@ class AnggotaController extends Controller
 
     public function destroy($id)
     {
-        $anggotas = anggota::findOrFail($id);
+        $anggotas = Anggota::findOrFail($id);
         $anggotas->delete();
 
         if ($anggotas) {
