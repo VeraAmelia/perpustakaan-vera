@@ -120,9 +120,6 @@
                                 @enderror
                             </div>
 
-                           
-                           
-
                             <button type="submit" class="btn btn-md btn-primary">Save</button>
                             <a href="{{ route('anggota.index') }}" class="btn btn-md btn-secondary">back</a>
 

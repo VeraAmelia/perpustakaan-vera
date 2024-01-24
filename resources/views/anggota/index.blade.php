@@ -13,7 +13,7 @@
 
 <body>
 
-    @include('navbar.navbar')
+    {{-- @include('navbar.navbar') --}}
     <div class="container mt-5">
         <div class="row">
             <div class="col-md-12">
