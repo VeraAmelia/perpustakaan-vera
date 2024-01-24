@@ -39,6 +39,7 @@
                         <table class="table table-bordered mt-1">
                             <thead>
                                 <tr>
+                                    <th scope="col">ID</th>
                                     <th scope="col">Kode Anggota</th>
                                     <th scope="col">Nama</th>
                                     <th scope="col">Jenis Kelamin</th>
@@ -52,7 +53,7 @@
                                 @php $no=1; @endphp
                                 @forelse ($anggotas as $anggota)
                                 <tr>
-                                    <td>{{ $no++ }}</td>
+                                    <td>{{ $id++ }}</td>
                                     <td>{{ $anggota->kode_anggota }}</td>
                                     <td>{{ $anggota->nama }}</td>
                                     <td>{{ $anggota->jenis_kelamin }}</td>

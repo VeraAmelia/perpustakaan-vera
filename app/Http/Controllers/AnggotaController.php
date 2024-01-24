@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class AnggotaController extends Controller
 {
-public function index()
+    public function index()
     {
         $anggotas = anggota::latest()->get();
         return view('anggota.index', compact('anggotas'));
@@ -15,8 +15,8 @@ public function index()
 
     public function create()
     {
-       
-        return view('anggota.create');
+        $anggotas = Anggota::all();
+        return view('anggota.create', compact('anggotas'));
     }
 
     public function store(Request $request)
@@ -25,10 +25,9 @@ public function index()
             'kode_anggota' => 'required|string|max:20',
             'nama' => 'required',
             'jenis_kelamin' => 'required',
-            'tgl_lahir' => 'required',
+            'tagl_lahir' => 'required',
             'telepon' => 'required',
             'alamat' => 'required',
-            
         ]);
 
         $anggotas = anggota::create([
@@ -63,8 +62,9 @@ public function index()
 
     public function edit($id)
     {
-        
-        return view('anggota.edit');
+        $anggotas = Anggota::all();
+        $anggotas = anggota::findOrFail($id);
+        return view('anggota.edit', compact('anggotas'));
     }
 
     public function update(Request $request, $id)
@@ -81,18 +81,19 @@ public function index()
         $anggotas = anggota::findOrFail($id);
 
         $anggotas->update([
-            'kode_anggota' => $request->kode_anggota,
-            'nama' => $request->nama,
+            'kode_anggota' => $request->nim,
+            'nama' => $request->mahasiswa_name,
             'jenis_kelamin' => $request->jenis_kelamin,
             'tgl_lahir' => $request->tgl_lahir,
             'telepon' => $request->telepon,
             'alamat' => $request->alamat,
         ]);
+
         if ($anggotas) {
             return redirect()
                 ->route('anggota.index')
                 ->with([
-                    'success' => 'Data Anggota Berhasil Diperbaharui'
+                    'success' => 'Data Anggota Berhasil diperbaharui'
                 ]);
         } else {
             return redirect()
