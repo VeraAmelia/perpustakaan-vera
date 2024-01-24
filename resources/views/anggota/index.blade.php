@@ -73,7 +73,7 @@
                                 </tr>
                                 @empty
                                 <tr>
-                                    <td class="text-center text-mute" colspan="8">Data Anggota tidak tersedia</td>
+                                    <td class="text-center text-mute" colspan="8">Data Anggota Tidak Tersedia</td>
                                 </tr>
                                 @endforelse
                             </tbody>

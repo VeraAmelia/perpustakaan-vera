@@ -62,10 +62,6 @@ class AnggotaController extends Controller
 
     public function edit($id)
     {
-<<<<<<< HEAD
-        $anggotas = Anggota::all();
-=======
->>>>>>> fcd9907c6e70d6ec9dcbdfa949531a36fb10b3e8
         $anggotas = Anggota::findOrFail($id);
         return view('anggota.edit', compact('anggotas'));
     }
