@@ -1,7 +1,9 @@
 <?php
 
-use App\Http\Controllers\AnggotaController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\AnggotaController;
+use App\Http\Controllers\KategoriController;
+use App\Http\Controllers\PenerbitController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,7 +16,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::resource('anggota', AnggotaController::class);
+
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::resource('anggota', AnggotaController::class);
+Route::resource('kategori', KategoriController::class);
+Route::resource('penerbit', PenerbitController::class);
