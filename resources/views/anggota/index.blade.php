@@ -53,7 +53,7 @@
                                 @php $no=1; @endphp
                                 @forelse ($anggotas as $anggota)
                                 <tr>
-                                    <td>{{ $id++ }}</td>
+                                    <td>{{ $no++ }}</td>
                                     <td>{{ $anggota->kode_anggota }}</td>
                                     <td>{{ $anggota->nama }}</td>
                                     <td>{{ $anggota->jenis_kelamin }}</td>
@@ -73,7 +73,7 @@
                                 </tr>
                                 @empty
                                 <tr>
-                                    <td class="text-center text-mute" colspan="4">Data Anggota tidak tersedia</td>
+                                    <td class="text-center text-mute" colspan="8">Data Anggota tidak tersedia</td>
                                 </tr>
                                 @endforelse
                             </tbody>

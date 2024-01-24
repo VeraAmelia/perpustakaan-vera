@@ -25,7 +25,7 @@ class AnggotaController extends Controller
             'kode_anggota' => 'required|string|max:20',
             'nama' => 'required',
             'jenis_kelamin' => 'required',
-            'tagl_lahir' => 'required',
+            'tgl_lahir' => 'required',
             'telepon' => 'required',
             'alamat' => 'required',
         ]);
@@ -62,7 +62,10 @@ class AnggotaController extends Controller
 
     public function edit($id)
     {
+<<<<<<< HEAD
         $anggotas = Anggota::all();
+=======
+>>>>>>> fcd9907c6e70d6ec9dcbdfa949531a36fb10b3e8
         $anggotas = Anggota::findOrFail($id);
         return view('anggota.edit', compact('anggotas'));
     }
