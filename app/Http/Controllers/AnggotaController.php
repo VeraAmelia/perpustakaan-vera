@@ -80,8 +80,8 @@ class AnggotaController extends Controller
         $anggotas = Anggota::findOrFail($id);
 
         $anggotas->update([
-            'kode_anggota' => $request->nim,
-            'nama' => $request->mahasiswa_name,
+            'kode_anggota' => $request->kode_anggota,
+            'nama' => $request->nama,
             'jenis_kelamin' => $request->jenis_kelamin,
             'tgl_lahir' => $request->tgl_lahir,
             'telepon' => $request->telepon,
@@ -113,7 +113,7 @@ class AnggotaController extends Controller
             return redirect()
                 ->route('anggota.index')
                 ->with([
-                    'success' => 'Data Anggota Berhasil dihapuskan'
+                    'success' => 'Data Berhasil Dihapus'
                 ]);
         } else {
             return redirect()
