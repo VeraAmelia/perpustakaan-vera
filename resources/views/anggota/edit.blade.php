@@ -33,14 +33,14 @@
 
                 <div class="card border-0 shadow rounded">
                     <div class="card-body">
-                        <form action="{{ route('anggota.update', $dosens->id) }}" method="POST">
+                        <form action="{{ route('anggota.update', $anggotas->id) }}" method="POST">
                             @csrf
                             @method('PUT')
 
                             <div class="form-group">
                                 <label for="kode_anggota">Kode Anggota</label>
                                 <input type="text" class="form-control @error('kode_anggota') is-invalid @enderror"
-                                    name="kode_anggota" value="{{ old('kode_anggota', $dosens->nip) }}" required>
+                                    name="kode_anggota" value="{{ old('kode_anggota', $anggotas->kode_anggota) }}" required>
 
                                 <!-- error message untuk nip -->
                                 @error('kode_anggota')
@@ -69,7 +69,7 @@
                                 <select name="jenis_kelamin"
                                     class="form-control @error('jenis_kelamin') is-invalid @enderror"
                                     value="{{ old('jenis_kelamin') }}" required>
-                                    <option value="{{ $anggotas->jenis_kelamin }}">{{ $dosens->jenis_kelamin }}
+                                    <option value="{{ $anggotas->jenis_kelamin }}">{{ $anggotas->jenis_kelamin }}
                                     </option>
                                     <option value="laki-laki">Laki Laki</option>
                                     <option value="perempuan">Perempuan</option>
