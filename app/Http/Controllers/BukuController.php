@@ -16,7 +16,7 @@ class BukuController extends Controller
     public function create()
     {
         $bukus = Buku::all();
-        return view('buku.create', compact('kategoris'));
+        return view('buku.create', compact('bukus'));
     }
 
     public function store(Request $request)

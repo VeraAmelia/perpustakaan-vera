@@ -68,8 +68,8 @@
                                 <select name="kategori_id" class="form-control @error('kategori_id') is-invalid @enderror"
                                     value="{{ old('kategori_id') }}" required>
                                     <option value="0">Pilih Kategori</option>
-                                    @foreach ($kategoris as $kategori)
-                                        <option value="{{ $kategori->id }}">{{ $kategori->kode_kategori }}</option>
+                                    @foreach ($bukus as $buku)
+                                        <option value="{{ $buku->id }}">{{ $buku->kode_kategori }}</option>
                                     @endforeach
                                 </select>
 
